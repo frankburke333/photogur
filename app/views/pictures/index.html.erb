@@ -1,7 +1,11 @@
-<h1>Pictures (<%= @pictures.length %>)</h1>
-<%= link_to "New Picture", "/pictures/new" %>
+<h1> Gallery Plus 8000 (<%= @pictures.length %>)</h1>
+<!-- <%= link_to "Add new picture", "/pictures/new" %> -->
+<%= link_to "Add new picture", new_picture_path %>
+
 
 <% @pictures.each do |picture| %>
   <p><%= picture.title %>, <%= picture.artist %></p>
-  <%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
+<!-- <%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %> -->
+<%= link_to image_tag(picture.url), picture_path(picture.id) %>
+
 <% end %>
